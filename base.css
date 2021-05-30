@@ -1,0 +1,218 @@
+:root{
+    --white-color: #fff;
+    --black-color: #000;
+    --text-color: #333;
+    --border-color: #dbdbdb;
+    --main-color: rgb(238, 77, 45);
+}
+*{
+    box-sizing: inherit;
+}
+html{
+    font-size: 62.5%;
+    line-height: 1.6rem;
+    font-family: Arial, Helvetica, sans-serif;
+    box-sizing: border-box;
+}
+.grid{
+    width: 1200px;
+    max-width: 100%;
+    margin: 0 auto;
+}
+.grid__full-width{
+    width: 100%;
+}
+.grid__row{
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: -5px;
+    margin-right: -5px;
+}
+.grid__column-2{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 16.6667%;
+}
+.grid__column-2-4{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 20%;
+}
+.grid__column-10{
+    padding-left: 5px;
+    padding-right: 5px;
+    width: 83.3334%;
+}
+/* Animation */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    } 
+    to {
+        opacity: 1;
+    }
+}
+@keyframes growth{
+    from{
+        transform: scale(var(--growth-from));
+    }
+    to{
+        transform: scale(var(--growth-to));
+    }
+}
+.modal{
+    position: fixed;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    display: flex;
+}
+.modal__overlay{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+.modal__body{
+    --growth-from: 0.7;
+    --growth-to: 1;
+    animation: growth linear 0.1s;
+    margin: auto;
+    z-index: 1;
+    position: relative;
+}
+.btn{
+    min-width: 142px;
+    height: 34px;
+    border: none;
+    border-radius: 2px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    padding: 0 12px;
+    outline: none;
+    background-color: var(--white-color);
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+}
+.btn.btn--small{
+    height: 32px;
+    padding: 0 8px;
+    font-size: 12px;
+}
+.btn.btn__effect:hover{
+    background-color: rgb(0,0,0,0.04);
+}
+.btn.btn--main{
+    background-color: var(--main-color);
+    color: white;
+}
+
+/* Selection */
+.select-choice{
+    height: 34px;
+    min-width: 200px;
+    background-color: var(--white-color);
+    border-radius: 2px;
+    padding: 0 12px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    
+}
+.select-choice:hover .select-choice__list{
+    display: block;
+}
+.select-choice-label{
+    font-size: 1.4rem;
+}
+.select-choice__icon{
+    font-size: 1.4rem;
+    position: relative;
+    color: rgb(131, 131, 131);
+    top: 1px;
+}
+
+.select-choice__list{
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 26px;
+    border-radius: 2px;
+    background-color: var(--white-color);
+    padding: 10px 16px;
+    list-style: none;
+    display: none;
+}
+.select-choice__list::after{
+    position: absolute;
+    content: "";
+    left: 0;
+    top: -10px;
+    width: 100%;
+    height: 10px;
+    display: block;
+}
+.select-choice__link{
+    font-size: 1.4rem;
+    color: var(--text-color);
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+.select-choice__link:hover{
+    color: var(--main-color);
+}
+.page-separate {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    list-style: none;
+}
+
+.page-separate-item {
+    margin: 0 14px;
+
+}
+
+.page-separate-item__link {
+    text-decoration: none;
+    display: block;
+    font-size: 2rem;
+    color: #939393;
+    min-width: 40px;
+    height: 30px;
+    text-align: center;
+    line-height: 30px;
+    border-radius: 4px;
+    
+}
+
+.page-separate-item__active .page-separate-item__link{
+    color: var(--white-color);
+    background-color: var(--main-color);
+    
+}
+
+.page-separate-item__active .page-separate-item__link:hover{
+    background-color: #fa7357;
+}
+
+.page-separate-item__btn .page-separate-item__link{
+    box-shadow: 0 1px 0 rgb(255 255 255 / 60%);
+    border-radius: 3px;
+    background: linear-gradient(to bottom,#f7f8fa,#e7e9ec);
+    color: #0F1111;
+    border: 1px solid #6c6e73;
+    border-color: #adb1b8 #a2a6ac #8d9096;
+
+    
+}
+
+.page-separate-item__btn .page-separate-item__link:hover{
+
+    background: linear-gradient(to bottom,#e7eaf0,#d9dce1);
+    border-color: #a2a6ac #979aa1 #82858a;
+}
